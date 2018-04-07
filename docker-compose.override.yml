@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  devenv:
+    build: 
+      context: .
+      args:
+        NVM_VERSION: "${NVM_VERSION}"
+        NPM_VERSION: "${NPM_VERSION}"
+        NODEJS_VERSION: "${NODEJS_VERSION}"

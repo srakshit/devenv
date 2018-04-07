@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  devenv:
+    build: .
+    image: devenv
+    volumes:
+      - ~/.ssh:/home/docker/.ssh:ro
+      - ./media/sf_git:/workspace
+    tty: true
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
