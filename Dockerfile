@@ -21,10 +21,10 @@ ENV NVM_DIR=/usr/local/lib/nvm
 ARG NVM_VERSION=0.33.8
 RUN mkdir -p $NVM_DIR && \
     cd /tmp && \
-    curl https://raw.githubusercontent.com/creationix/nvm/v$NVM_VERSION/install.sh --output install.sh --silent && \
-    chmod +x install.sh && \
-    ./install.sh && \
-    rm -f install.sh
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v$NVM_VERSION/install.sh --silent | bash
+#    chmod +x install.sh && \
+#    ./install.sh && \
+#    rm -f install.sh
 
 #Install nodejs
 ARG NODEJS_VERSION=8.10.0
