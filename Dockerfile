@@ -33,3 +33,6 @@ RUN /bin/bash -l -c "nvm install $NODEJS_VERSION && nvm use $NODEJS_VERSION && n
 #Install npm
 ARG NPM_VERSION=5.7.1
 RUN /bin/bash -l -c "npm install -g npm@$NPM_VERSION"
+
+#Install node-vim-debugger
+RUN /bin/bash -l -c "npm install -g vimdebug"
