@@ -18,7 +18,7 @@ RUN git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vund
 
 #Install nvm
 ENV NVM_DIR=/usr/local/lib/nvm
-ARG NVM_VERSION
+ARG NVM_VERSION=0.33.8
 RUN mkdir -p $NVM_DIR && \
     cd /tmp && \
     curl https://raw.githubusercontent.com/creationix/nvm/v$NVM_VERSION/install.sh --output install.sh --silent && \
@@ -27,9 +27,9 @@ RUN mkdir -p $NVM_DIR && \
     rm -f install.sh
 
 #Install nodejs
-ARG NODEJS_VERSION
+ARG NODEJS_VERSION=8.10.0
 RUN /bin/bash -l -c "nvm install $NODEJS_VERSION && nvm use $NODEJS_VERSION && nvm cache clear"
 
 #Install npm
-ARG NPM_VERSION
+ARG NPM_VERSION=5.7.1
 RUN /bin/bash -l -c "npm install -g npm@$NPM_VERSION"

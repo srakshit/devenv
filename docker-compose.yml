@@ -2,8 +2,7 @@ version: '3.2'
 
 services:
   devenv:
-    build: .
-    image: devenv
+    image: srakshit/devenv
     volumes:
       - ~/.ssh:/home/docker/.ssh:ro
       - ./media/sf_git:/workspace
