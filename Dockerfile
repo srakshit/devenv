@@ -1,5 +1,7 @@
 FROM centos:centos7
 
+ENV TERM=linux
+
 #Install general tools
 RUN yum -y -q install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     yum -y -q update && \

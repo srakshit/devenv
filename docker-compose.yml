@@ -5,7 +5,7 @@ services:
     image: srakshit/devenv
     volumes:
       - ~/.ssh:/home/docker/.ssh:ro
-      - ./media/sf_git:/workspace
+      - /media/sf_git:/workspace
     tty: true
 
   postgres:
