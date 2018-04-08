@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set encoding=utf-8
+"set encoding=utf-8
 set lines=50 columns=1000
 
 "set the runtime path to include Vundle and initialize
@@ -11,35 +11,24 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
- Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'tpope/vim-surround'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
-Plugin 'valloric/youcompleteme'
-Plugin 'godlygeek/tabular'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-repeat'
-Plugin 'pangloss/vim-javascript'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-commentary'
-Plugin 'easymotion/vim-easymotion'
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+"Plugin 'valloric/youcompleteme'
+"Plugin 'godlygeek/tabular'
+"Plugin 'ervandew/supertab'
+"Plugin 'tpope/vim-repeat'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'tpope/vim-commentary'
+"Plugin 'easymotion/vim-easymotion'
+"Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
