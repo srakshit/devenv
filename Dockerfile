@@ -3,7 +3,7 @@ FROM centos:centos7
 #Install general tools
 RUN yum -y -q install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     yum -y -q update && \
-    yum -y -q install git wget jq unzip which wemux tmux telnet sudo httpie redis curl
+    yum -y -q install git wget jq unzip which wemux tmux telnet sudo httpie redis curl postgresql
 
 #Install vim8
 RUN curl -L https://copr.fedorainfracloud.org/coprs/mcepl/vim8/repo/epel-7/mcepl-vim8-epel-7.repo -o /etc/yum.repos.d/mcepl-vim8-epel-7.repo --silent && \
