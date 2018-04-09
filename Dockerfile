@@ -69,11 +69,11 @@ RUN mkdir -p $HOME/.vim/vim-addons && \
     git clone --depth=1 https://github.com/kristijanhusak/vim-multiple-cursors github-kristijanhusak-vim-multiple-cursors && \
     git clone --depth=1 http://github.com/digitaltoad/vim-jade github-digitaltoad-vim-jade && \
     git clone --depth=1 http://github.com/tpope/vim-cucumber github-tpope-vim-cucumber && \ 
-    git clone --depth=1 https://github.com/vim-airline/vim-airline.git
-    git clone --depth=1 https://github.com/pangloss/vim-javascript.git
-    git clone --depth=1 https://github.com/rstacruz/sparkup.git
-    git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
-    git clone --depth=1 https://github.com/wincent/command-t.git
+    git clone --depth=1 https://github.com/vim-airline/vim-airline.git && \ 
+    git clone --depth=1 https://github.com/pangloss/vim-javascript.git && \ 
+    git clone --depth=1 https://github.com/rstacruz/sparkup.git && \ 
+    git clone --depth=1 https://github.com/vim-syntastic/syntastic.git && \ 
+    git clone --depth=1 https://github.com/wincent/command-t.git && \ 
     
     mkdir -p /home/docker/.vim/vim-addons/matchit.zip/archive/ && \
     curl --silent -L --max-redirs 40 -o '/home/docker/.vim/vim-addons/matchit.zip/archive/matchit.zip' 'http://www.vim.org/scripts/download_script.php?src_id=8196'
