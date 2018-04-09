@@ -81,7 +81,7 @@ RUN mkdir -p $HOME/.vim/vim-addons && \
 #Install Youcompleteme
 RUN cd $HOME/.vim/vim-addons/YouCompleteMe && \
     git submodule update --init --recursive && \
-    ./install.sh --clang-completer
+    ./install.sh
 
 #Install Powerline
 #RUN $HOME/scripts/powerline_setup.sh
