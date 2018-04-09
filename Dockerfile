@@ -45,8 +45,8 @@ ARG NPM_VERSION=5.7.1
 RUN /bin/bash -l -c "npm install -g npm@$NPM_VERSION vimdebug yarn grunt-cli npm-check-updates"
 
 #Install Vim plugins
-RUN git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-    #vim +PluginInstall +qall
+RUN git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim && \
+    vim +PluginInstall +qall
 
 #Install powerline
 #RUN $HOME/scripts/powerline_setup.sh
