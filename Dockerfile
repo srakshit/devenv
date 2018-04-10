@@ -6,7 +6,12 @@ ENV TERM=linux
 #Install general tools
 RUN yum -y -q install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     yum -y -q update && \
-    yum -y -q install git wget jq unzip which wemux tmux telnet sudo httpie redis curl postgresql
+    yum -y -q install \
+	git wget jq unzip which wemux tmux telnet sudo httpie redis curl postgresql \
+    	automake gcc gcc-c++ kernel-devel cmake autoconf patch  \
+	python34 python34-devel python34-pip python34-setuptools \
+        python27 python27-devel python27-pip python27-setuptools && \
+    yum -y -q clean all
 
 #Install vim8
 RUN curl -L https://copr.fedorainfracloud.org/coprs/mcepl/vim8/repo/epel-7/mcepl-vim8-epel-7.repo -o /etc/yum.repos.d/mcepl-vim8-epel-7.repo --silent && \
@@ -15,7 +20,7 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/mcepl/vim8/repo/epel-7/mcepl
 #Add docker user and add it to sudoers file
 RUN groupadd docker && \
     useradd -g docker docker && \
-    echo 'docker ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
+    echo "docker ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER docker
 
@@ -73,15 +78,15 @@ RUN mkdir -p $HOME/.vim/vim-addons && \
     git clone --depth=1 https://github.com/pangloss/vim-javascript.git && \ 
     git clone --depth=1 https://github.com/rstacruz/sparkup.git && \ 
     git clone --depth=1 https://github.com/vim-syntastic/syntastic.git && \ 
-    git clone --depth=1 https://github.com/wincent/command-t.git && \ 
-    
+    git clone --depth=1 https://github.com/wincent/command-t.git && \
+    git clone --depth=1 https://github.com/Valloric/YouCompleteMe.git && \ 
     mkdir -p /home/docker/.vim/vim-addons/matchit.zip/archive/ && \
     curl --silent -L --max-redirs 40 -o '/home/docker/.vim/vim-addons/matchit.zip/archive/matchit.zip' 'http://www.vim.org/scripts/download_script.php?src_id=8196'
 
-#Install Youcompleteme
-RUN cd $HOME/.vim/vim-addons/YouCompleteMe && \
-    git submodule update --init --recursive && \
-    ./install.sh
+#Install Youcompleteme - cmake configuration issue
+#RUN cd $HOME/.vim/vim-addons/YouCompleteMe && \
+#    git submodule update --init --recursive && \
+#    ./install.sh --js-completer
 
 #Install Powerline
 #RUN $HOME/scripts/powerline_setup.sh
